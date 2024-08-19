@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558731118870",
+    "project_id": "pakvoyage-d9686",
+    "storage_bucket": "pakvoyage-d9686.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558731118870:android:edeedd7a4f22b8e3e86837",
+        "android_client_info": {
+          "package_name": "com.example.pak_voyage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOe3nl9YSSXD6c9vy8Ib7ULsmQS3iu3vY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
