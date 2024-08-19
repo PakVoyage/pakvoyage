@@ -5,15 +5,15 @@ import 'package:pak_voyage/APIs/firebase_services.dart';
 import 'package:pak_voyage/Screens/Places/places_screen.dart';
 import 'package:pak_voyage/Utils/styled_fonts.dart';
 
-class IsbPlacesView extends StatefulWidget {
-  const IsbPlacesView({super.key, required this.cityName});
+class AllPlacesView extends StatefulWidget {
+  const AllPlacesView({super.key, required this.cityName});
   final String cityName;
 
   @override
-  State<IsbPlacesView> createState() => _IsbPlacesViewState();
+  State<AllPlacesView> createState() => _AllPlacesViewState();
 }
 
-class _IsbPlacesViewState extends State<IsbPlacesView> {
+class _AllPlacesViewState extends State<AllPlacesView> {
   Future<List<Map<String, dynamic>>>? isbPlaces;
 
   String? imgPath;

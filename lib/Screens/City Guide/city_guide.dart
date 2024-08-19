@@ -73,7 +73,7 @@ class CityGuideView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const IsbPlacesView(
+                                  builder: (context) => const AllPlacesView(
                                     cityName: "islamabad",
                                   ),
                                 ));
@@ -147,7 +147,7 @@ class CityGuideView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const IsbPlacesView(
+                                  builder: (context) => const AllPlacesView(
                                     cityName: "karachi",
                                   ),
                                 ));
@@ -221,7 +221,7 @@ class CityGuideView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const IsbPlacesView(
+                                  builder: (context) => const AllPlacesView(
                                     cityName: "lahore",
                                   ),
                                 ));
@@ -295,7 +295,7 @@ class CityGuideView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const IsbPlacesView(
+                                  builder: (context) => const AllPlacesView(
                                     cityName: "multan",
                                   ),
                                 ));
@@ -369,7 +369,7 @@ class CityGuideView extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const IsbPlacesView(
+                                  builder: (context) => const AllPlacesView(
                                     cityName: "quetta",
                                   ),
                                 ));

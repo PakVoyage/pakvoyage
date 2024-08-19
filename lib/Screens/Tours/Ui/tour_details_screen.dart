@@ -166,13 +166,6 @@ class TourDetailsScreen extends StatelessWidget {
                                         tourId: tourId,
                                       ),
                                     ));
-                                // showAddCardDialog(
-                                //     context,
-                                //     name,
-                                //     details,
-                                //     provider.formattedDate,
-                                //     route,
-                                //     imgUrl); // Show the dialog
                               } catch (e) {
                                 print('Error: $e');
                                 // Handle the error, e.g., show an alert dialog

@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pak_voyage/Models/tour.dart';
 import 'package:pak_voyage/Screens/All%20Cuisines/all_cuisine_screen.dart';
-import 'package:pak_voyage/Screens/All%20Places/all_places_screen.dart';
+import 'package:pak_voyage/Screens/All%20Places/all_cities_screen.dart';
 import 'package:pak_voyage/Screens/Places/places_screen.dart';
 import 'package:pak_voyage/Screens/Tours/Ui/all_tours_screen.dart';
 import 'package:pak_voyage/Screens/Tours/Ui/tour_details_screen.dart';
@@ -20,21 +20,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Map<String, dynamic>>? topPlaces;
-  List<Map<String, dynamic>>? tours;
-
-  @override
-  void initState() {
-    super.initState();
-    fetchTopDiningPlaces().then(
-      (value) {
-        setState(() {
-          topPlaces = value;
-        });
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     TextEditingController searchController = TextEditingController();
@@ -53,17 +38,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Top Places
                 buildSectionTitle('Places for you'),
                 const SizedBox(height: 10),
+                // Top 3 Places Content
                 buildTopPlacesRow(context),
                 const SizedBox(height: 10),
                 // Top Cuisine
                 buildSectionTitle('Cuisine for you'),
                 const SizedBox(height: 10),
+                // Top 3 Ciusine Content
                 buildTopCuisineRow(context),
                 const SizedBox(height: 10),
                 // Top Tours
                 buildSectionTitle('Tours for you'),
                 const SizedBox(height: 10),
-                // buildTopToursRow(context),
+                // Top 3 tour Content
                 buildTopToursRow(context)
               ],
             ),
@@ -85,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 text: title,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
-              TextSpan(),
+              const TextSpan(),
             ],
           ),
         ),
@@ -95,19 +82,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AllPlaces(),
+                      builder: (context) => const AllPlaces(),
                     ))
                 : title == 'Cuisine for you'
                     ? Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AllCuisineView(),
+                          builder: (context) => const AllCuisineView(),
                         ))
                     : title == 'Tours for you'
                         ? Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AllTourView(),
+                              builder: (context) => const AllTourView(),
                             ))
                         : null;
           },
@@ -304,28 +291,6 @@ Future<List<TourModel>> getToursByLocation(String location) async {
         .toList();
   } catch (e) {
     log('Failed to fetch tours: $e');
-    return [];
-  }
-}
-
-Future<List<Map<String, dynamic>>> fetchTopDiningPlaces() async {
-  try {
-    QuerySnapshot snapshot = await FirebaseFirestore.instance
-        .collection('city')
-        .doc('islamabad')
-        .collection('topdiningplaces')
-        .get();
-
-    // Transform the documents into a list of maps
-    List<Map<String, dynamic>> data = snapshot.docs.map((doc) {
-      return doc.data() as Map<String, dynamic>;
-    }).toList();
-    log('Data fetched successfully');
-
-    return data;
-  } catch (e) {
-    log('Failed to fetch data: $e');
-    print('Failed to fetch data: $e');
     return [];
   }
 }

@@ -41,7 +41,7 @@ Widget citiesPlaces(String name, BuildContext context) {
     onTap: () {
       Navigator.push(context, MaterialPageRoute(
         builder: (context) {
-          return IsbPlacesView(
+          return AllPlacesView(
             cityName: name == "ISLAMABAD"
                 ? "islamabad"
                 : name == "LAHORE"
