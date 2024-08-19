@@ -93,7 +93,7 @@ class SignInView extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            // Sign up Button
+            // Sign in Button
             GestureDetector(
               onTap: () {
                 log(emailController.text.toLowerCase());
